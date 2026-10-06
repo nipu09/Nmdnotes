@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <title>NMDnotes</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body
+    class="h-full pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] font-['DM_Sans',sans-serif] text-[#2A2440] dark:text-[#EEEAF8] bg-[#ECE7F5] bg-[radial-gradient(55rem_38rem_at_8%_-8%,#F8DDE5,transparent_62%),radial-gradient(50rem_40rem_at_100%_108%,#D6E2F8,transparent_58%)] dark:bg-[#14111D] dark:bg-[radial-gradient(55rem_38rem_at_8%_-8%,#2B1E40,transparent_62%),radial-gradient(50rem_40rem_at_100%_108%,#1A2342,transparent_58%)]"
+  >
+    <div class="h-full flex flex-col md:flex-row md:p-4 md:gap-4">
+      <!-- SIDEBAR -->
+
+      <!-- EDITOR -->
+
+      <main
+        class="relative flex flex-col flex-1 min-h-0 overflow-hidden md:rounded-3xl bg-[#FFFDFC] dark:bg-[#1D1929] shadow-xl shadow-[#4A348C]/10"
+      >
+        <!-- Vertical line -->
+        <div
+          class="hidden md:block absolute inset-y-0 left-[56px] w-px bg-[#F3C6D2] dark:bg-[#4A2F45]"
+        ></div>
+
+        <!-- Top bar -->
+        <form action="/update/<%= files %>" method="POST">
+
+        <div
+          class="flex items-center gap-3 px-5 md:pl-[84px] md:pr-8 pt-5 pb-1"
+        >
+          <div class="flex-1 text-xs text-[#7C7595] dark:text-[#9C94B8]">
+             <a href="/">
+            <button
+             
+              class="rounded-full bg-[#7457D9] text-white dark:bg-[#A892F5] dark:text-[#17121F] px-4 py-2 text-sm font-medium hover:opacity-90"
+            >
+              home
+            </button>
+          </div>
+          </a>
+
+          
+
+          <a href="/">
+          <button
+            type="submit"
+            class="rounded-full bg-[#7457D9] text-white dark:bg-[#A892F5] dark:text-[#17121F] px-4 py-2 text-sm font-medium hover:opacity-90"
+          >
+            update
+          
+          </button>
+          </a>
+        </div>
+
+
+        <!-- Editor area -->
+
+        <div class="flex-1 min-h-0 overflow-y-auto">
+          <div class="full flex flex-col px-5 md:pl-[84px] md:pr-10 pt-4 pb-10">
+            <!-- TITLE -->
+            <input
+              type="text"
+              name="title"
+              value="<%= title %>"
+            
+              autocomplete="off"
+              class="bg-transparent font-['Dancing_Script',cursive] font-semibold text-5xl md:text-6xl leading-tight pb-4 focus:outline-none"
+            />
+
+            <!-- DESCRIPTION -->
+
+            <textarea
+              name="details"
+              placeholder="Start writing…"
+              class="min-h-[60vh] w-full resize-none bg-transparent font-['Dancing_Script',cursive] font-medium text-[25px] leading-8 bg-local bg-[repeating-linear-gradient(transparent,transparent_31px,#EBE5F5_31px,#EBE5F5_32px)] dark:bg-[repeating-linear-gradient(transparent,transparent_31px,#282339_31px,#282339_32px)] focus:outline-none"
+            >
+ <%= details %> </textarea
+            >
+          </div>
+        </div>
+        </from>
+      </main>
+    </div>
+  </body>
+</html>
